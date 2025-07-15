@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nazario | Fashion & Lifestyle</title>
+<style>
+  body { margin:0; font-family: 'Helvetica Neue', sans-serif; color:#333; }
+  header { background:#fff; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+  .logo { font-size:1.5rem; font-weight:bold; letter-spacing:2px; }
+  .hero { text-align:center; padding:4rem 2rem; background:#f9f9f9; }
+  .hero h1 { font-size:2rem; margin-bottom:1rem; }
+  .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1rem; padding:2rem; }
+  .product { border:1px solid #eee; padding:1rem; text-align:center; }
+  .stars { color:gold; }
+  .filters { display:flex; gap:1rem; padding:1rem 2rem; }
+  .footer { background:#222; color:#fff; text-align:center; padding:2rem; }
+  .popup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; }
+  .popup-content { background:#fff; padding:2rem; border-radius:8px; width:300px; text-align:center; }
+  .popup-content input { width:100%; margin:0.5rem 0; padding:0.5rem; }
+  .popup-content button { margin-top:1rem; }
+</style>
+</head>
+<body>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #222;
+    }
+    
+    header button {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    header button:hover {
+      background: #555;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #222;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+    
+    .hero .cta {
+      margin-top: 2rem;
+    }
+    
+    .hero .cta button {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .hero .cta button:hover {
+      transform: scale(1.05);
+    }
+    </style>
+    
+    <header>
+      <div class="logo">NAZARIO</div>
+      <button onclick="openPopup()">Sign In / Sign Up</button>
+    </header>
+    
+    <section class="hero">
+      <h1>Welcome to Nazario</h1>
+      <p>Discover the latest in fashion & lifestyle</p>
+      <div class="cta">
+        <button>Shop Now</button>
+      </div>
+    </section>
+    
+
+
+<section class="filters">
+  <select><option>Category</option></select>
+  <select><option>Price</option></select>
+  <select><option>Size</option></select>
+</section>
+
+<section class="products">
+  <div class="product">
+    <img src="img/img1.jpg" alt="Product">
+    <h3>Product 1</h3>
+    <div class="stars">★★★★★</div>
+  </div>
+  <div class="product">
+    <img src="img/img2.jpg" alt="Product">
+    <h3>Product 2</h3>
+    <div class="stars">★★★★☆</div>
+  </div>
+  <div class="product">
+    <img src="img/img3.jpg" alt="Product">
+    <h3>Product 3</h3>
+    <div class="stars">★★★☆☆</div>
+  </div>
+</section>
+
+
+
+<div class="popup" id="popup"
+style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+       background:rgba(0,0,0,0.7); justify-content:center; align-items:center; display:flex;">
+<div class="popup-content" style="background:#fff; padding:2rem; border-radius:8px; width:350px; text-align:left;">
+      <h2>Create Account</h2>
+  
+      <label>Full Name:</label>
+      <input type="text" placeholder="Full Name">
+  
+      <label>Email:</label>
+      <input type="email" placeholder="Email">
+  
+      <label>Phone:</label>
+      <input type="tel" placeholder="Phone Number">
+  
+      <label>Password:</label>
+      <input type="password" placeholder="Password">
+  
+      <label>Confirm Password:</label>
+      <input type="password" placeholder="Confirm Password">
+  
+      <label>Gender:</label><br>
+      <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="Other"> Other
+      <br><br>
+  
+      <label>Date of Birth:</label>
+      <input type="date">
+
+      <div style="display: flex; align-items: center; gap: 8px; margin-top: 1rem;">
+        <input type="checkbox" id="terms">
+        <label for="terms">I agree to the Terms & Conditions</label>
+      </div>
+
+      <br>
+      <button>Register</button>
+      <button onclick="closePopup()">Cancel</button>
+
+    </div>
+  </div>
+  
+
+<script>
+function openPopup() {
+  document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+</script>
+
+<section class="reviews" style="padding:2rem; background:#f5f5f5;">
+    <h2 style="text-align:center;">What Our Customers Say</h2>
+  
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1rem; margin-top:2rem;">
+      
+      <div style="background:white; padding:1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <h4>Jane Doe</h4>
+        <div style="color:gold;">★★★★★</div>
+        <p>Absolutely loved the collection! The quality and style are unmatched. Will shop again!</p>
+      </div>
+  
+      <div style="background:white; padding:1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <h4>John Smith</h4>
+        <div style="color:gold;">★★★★☆</div>
+        <p>Great service and trendy designs. A little expensive but worth it!</p>
+      </div>
+  
+      <div style="background:white; padding:1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <h4>Emily Johnson</h4>
+        <div style="color:gold;">★★★★★</div>
+        <p>Fast delivery and gorgeous pieces. Nazario has become my go-to brand.</p>
+      </div>
+  
+    </div>
+  </section>
+
+  <footer style="background:#000; color:#fff; padding:2rem 1rem;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:1rem;">
+  
+      <div>
+        <h4 style="color:skyblue;">EYEGLASSES</h4>
+        <p>Men</p>
+        <p>Women</p>
+        <p>Kids</p>
+        <p>Fastrack</p>
+        <p>Rimless</p>
+        <p>Titan</p>
+      </div>
+  
+      <div>
+        <h4 style="color:skyblue;">SUNGLASSES</h4>
+        <p>Men</p>
+        <p>Women</p>
+        <p>Rimless</p>
+        <p>Fastrack</p>
+      </div>
+  
+      <div>
+        <h4 style="color:skyblue;">CONTACT LENSES</h4>
+        <p>Bausch & Lomb</p>
+        <p>Johnson & Johnson</p>
+      </div>
+  
+      <div>
+        <h4 style="color:skyblue;">ACCOUNT</h4>
+        <p>Our Policies</p>
+        <p>My Account</p>
+        <p>Create an Account</p>
+        <p>Tata Neu Pass</p>
+        <p>Titan Encircle</p>
+      </div>
+  
+      <div>
+        <h4 style="color:skyblue;">ABOUT TITAN EYE +</h4>
+        <p>About Us</p>
+        <p>Blog</p>
+        <p>Contact Us</p>
+        <p>Terms & Conditions</p>
+        <p>Cyber Security Policy</p>
+      </div>
+  
+      <div>
+        <h4 style="color:skyblue;">USEFUL LINKS</h4>
+        <p>Store Locations</p>
+        <p>Business Partner</p>
+        <p>EyeX Compatible App</p>
+        <p>Hearing Aids</p>
+        <p>Exercise Your Rights</p>
+        <p>Glossary</p>
+      </div>
+  
+    </div>
+  </footer>
+  
+  <footer class="footer">
+    <p>About Us | Contact Us | Privacy Policy</p>
+    <p>&copy; 2025 Nazario</p>
+  </footer>
+
+</body>
+</html>
